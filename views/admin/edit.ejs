@@ -2,6 +2,7 @@
 <%- include("layouts/_nav") -%>
 
 <h1>Modifier une fiche</h1>
+<% if(contact){ %>
 
 <form action="/admin/edit/<%= contact.id %>" method="post">
 
@@ -19,5 +20,7 @@
 
   </div>
 </form>
-
+<% } else{ %>
+<p>Ce contact n'existe pas</p>
+<% } %>
 <%- include("../layouts/_footer") -%>

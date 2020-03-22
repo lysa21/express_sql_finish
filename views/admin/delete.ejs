@@ -2,7 +2,7 @@
 <%- include("layouts/_nav") -%>
 
 <h1>Effacer une fiche ?</h1>
-
+<% if(contact){ %>
 <form action="/admin/delete/<%= contact.id %>" method="post">
   <div class="form-horizontal">
     <div class="form-group row">
@@ -35,5 +35,7 @@
     </div>
   </div>
 </form>
-
+<% } else{ %>
+<p>Ce contact n'existe pas</p>
+<% } %>
 <%- include("../layouts/_footer") -%>
